@@ -1,4 +1,7 @@
-﻿using NotificationServiceMS.Models;
+﻿using MailKit.Security;
+using MimeKit;
+using NotificationServiceMS.Models;
+using System.Net.Mail;
 
 namespace NotificationServiceMS.Services
 {
@@ -18,13 +21,38 @@ namespace NotificationServiceMS.Services
 
         private void SendEmail(string to, string subject, string body)
         {
-            // Replace this with actual email sending logic
-            Console.WriteLine($"Sending EMAIL to {to}: Subject={subject}, Body={body}");
+            string myEmail = "ashwanikumarnt@gmail.com";
+            var email = new MimeMessage();
+            email.From.Add(MailboxAddress.Parse(myEmail));
+            email.To.Add(MailboxAddress.Parse(to));
+            email.Subject = subject;
+
+            email.Body = new TextPart(MimeKit.Text.TextFormat.Html)
+            {
+                Text = body
+            };
+
+            using var smtp = new MailKit.Net.Smtp.SmtpClient();
+            try
+            {
+                smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
+                smtp.Authenticate(myEmail, "frua kwlp vjnx wccr");
+                smtp.Send(email);
+                Console.WriteLine($"EMAIL sent to {to}: Subject={subject}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to send email: {ex.Message}");
+            }
+            finally
+            {
+                smtp.Disconnect(true);
+            }
         }
 
         private void SendSms(string to, string body)
         {
-            // Replace this with actual SMS sending logic
+            //My Twilio Creds are Expired.
             Console.WriteLine($"Sending SMS to {to}: Body={body}");
         }
     }

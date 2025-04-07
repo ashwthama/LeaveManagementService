@@ -70,7 +70,6 @@ namespace LeaveServiceMS.Controllers
 
             await _context.SaveChangesAsync();
 
-            // Notification placeholder
             Console.WriteLine($"[Notification] {leave.EmployeeUsername}, your leave request was {leave.Status}");
 
             return Ok("Decision updated.");
