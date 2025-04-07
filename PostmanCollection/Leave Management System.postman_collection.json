@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "55e2ffea-77c4-4b10-8534-d02fa05c8843",
+		"name": "Leave Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21236124"
+	},
+	"item": [
+		{
+			"name": "Manager_Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"Vijay\",\n  \"password\": \"Vijay\",\n  \"role\": \"Manager\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/User/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"User",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee_Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"Ashwani\",\n  \"password\": \"Ashwani\",\n  \"role\": \"Employee\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/User/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"User",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HR_Admin_Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"HR\",\n  \"password\": \"HR\",\n  \"role\": \"HR/Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/User/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"User",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User_Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"Ashwani\",\n  \"password\": \"Ashwani\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/User/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"User",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserAllData_HR_Manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVmlqYXkiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJNYW5hZ2VyIiwiZXhwIjoxNzQ0MDA5Mjk2LCJpc3MiOiJ3d3cuand0aW1wbGVtZW50YXRpb24uY29tIiwiYXVkIjoid3d3Lmp3dGltcGxlbWVudGF0aW9uLmNvbSJ9.JHQGyRQOmdF7Niqolv7Q37etFWYAizTO7f7x0Co43M4"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/User/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"User",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User_me_Employee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQXNod2FuaSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkVtcGxveWVlIiwiZXhwIjoxNzQ0MDEwMzUyLCJpc3MiOiJ3d3cuand0aW1wbGVtZW50YXRpb24uY29tIiwiYXVkIjoid3d3Lmp3dGltcGxlbWVudGF0aW9uLmNvbSJ9.MZYCiVSkIj9qKs4WZQFz3EYfnSdF8SV0ehDXlKJtYbM"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/User/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"User",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leave/apply",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQXNod2FuaSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkVtcGxveWVlIiwiZXhwIjoxNzQ0MDEwMzUyLCJpc3MiOiJ3d3cuand0aW1wbGVtZW50YXRpb24uY29tIiwiYXVkIjoid3d3Lmp3dGltcGxlbWVudGF0aW9uLmNvbSJ9.MZYCiVSkIj9qKs4WZQFz3EYfnSdF8SV0ehDXlKJtYbM"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"startDate\": \"2025-04-07T05:43:46.337Z\",\n  \"endDate\": \"2025-04-10T05:43:46.337Z\",\n  \"emailId\": \"ashwanikumarnt@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/Leave/apply",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"Leave",
+						"apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee-leaves",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQXNod2FuaSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkVtcGxveWVlIiwiZXhwIjoxNzQ0MDEwMzUyLCJpc3MiOiJ3d3cuand0aW1wbGVtZW50YXRpb24uY29tIiwiYXVkIjoid3d3Lmp3dGltcGxlbWVudGF0aW9uLmNvbSJ9.MZYCiVSkIj9qKs4WZQFz3EYfnSdF8SV0ehDXlKJtYbM"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/Leave/my-leaves",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"Leave",
+						"my-leaves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leave/decisionbyManager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVmlqYXkiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJNYW5hZ2VyIiwiZXhwIjoxNzQ0MDA5Mjk2LCJpc3MiOiJ3d3cuand0aW1wbGVtZW50YXRpb24uY29tIiwiYXVkIjoid3d3Lmp3dGltcGxlbWVudGF0aW9uLmNvbSJ9.JHQGyRQOmdF7Niqolv7Q37etFWYAizTO7f7x0Co43M4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"requestId\": 3,\n  \"isApproved\": false,\n  \"managerComment\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/Leave/decision",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"Leave",
+						"decision"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leave/report_byHR_Admin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSFIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJIUi9BZG1pbiIsImV4cCI6MTc0NDAxMjE3OCwiaXNzIjoid3d3Lmp3dGltcGxlbWVudGF0aW9uLmNvbSIsImF1ZCI6Ind3dy5qd3RpbXBsZW1lbnRhdGlvbi5jb20ifQ.MXxEEamcWfvuTtTHk9uSx3Cm8oi2Ui7BJJXg2olt7M0"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/Leave/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"Leave",
+						"report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leave/balances_By_HR_ADMIN",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSFIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJIUi9BZG1pbiIsImV4cCI6MTc0NDAxMjE3OCwiaXNzIjoid3d3Lmp3dGltcGxlbWVudGF0aW9uLmNvbSIsImF1ZCI6Ind3dy5qd3RpbXBsZW1lbnRhdGlvbi5jb20ifQ.MXxEEamcWfvuTtTHk9uSx3Cm8oi2Ui7BJJXg2olt7M0"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5283/gateway/api/Leave/balances",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5283",
+					"path": [
+						"gateway",
+						"api",
+						"Leave",
+						"balances"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
