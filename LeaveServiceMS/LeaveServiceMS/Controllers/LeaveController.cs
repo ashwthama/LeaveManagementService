@@ -39,7 +39,8 @@ namespace LeaveServiceMS.Controllers
             {
                 EmployeeUsername = username,
                 StartDate = request.StartDate,
-                EndDate = request.EndDate
+                EndDate = request.EndDate,
+                EmailId = request.EmailId,
             };
 
             _context.LeaveRequests.Add(leave);
@@ -66,6 +67,19 @@ namespace LeaveServiceMS.Controllers
                 var balance = await _context.LeaveBalances.FirstOrDefaultAsync(b => b.Username == leave.EmployeeUsername);
                 if (balance != null)
                     balance.AvailableDays -= days;
+
+                var httpClient = new HttpClient();
+                var notificationRequest = new
+                {
+                    to = leave.EmployeeUsername, 
+                    subject = "Leave Request Approved",
+                    body = $"Your leave from {leave.StartDate:dd MMM yyyy} to {leave.EndDate:dd MMM yyyy} has been approved.",
+                    type = "Email", 
+                    recipient = leave.EmailId,
+                };
+
+                var response = await httpClient.PostAsJsonAsync("http://localhost:5283/gateway/api/Notification", notificationRequest);
+
             }
 
             await _context.SaveChangesAsync();
