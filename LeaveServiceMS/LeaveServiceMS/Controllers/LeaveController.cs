@@ -60,7 +60,7 @@ namespace LeaveServiceMS.Controllers
 
             leave.Status = decision.IsApproved ? "Approved" : "Rejected";
             leave.ManagerComment = decision.ManagerComment;
-
+            var httpClient = new HttpClient();
             if (decision.IsApproved)
             {
                 var days = (leave.EndDate - leave.StartDate).Days + 1;
@@ -68,7 +68,7 @@ namespace LeaveServiceMS.Controllers
                 if (balance != null)
                     balance.AvailableDays -= days;
 
-                var httpClient = new HttpClient();
+                
                 var notificationRequest = new
                 {
                     to = leave.EmployeeUsername, 
@@ -80,6 +80,19 @@ namespace LeaveServiceMS.Controllers
 
                 var response = await httpClient.PostAsJsonAsync("http://localhost:5283/gateway/api/Notification", notificationRequest);
 
+            }
+            else
+            {
+                var notificationRequest = new
+                {
+                    to = leave.EmployeeUsername,
+                    subject = "Leave Request Rejected",
+                    body = $"Your leave from {leave.StartDate:dd MMM yyyy} to {leave.EndDate:dd MMM yyyy} has been Rejected.",
+                    type = "Email",
+                    recipient = leave.EmailId,
+                };
+
+                var response = await httpClient.PostAsJsonAsync("http://localhost:5283/gateway/api/Notification", notificationRequest);
             }
 
             await _context.SaveChangesAsync();
